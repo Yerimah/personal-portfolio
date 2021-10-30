@@ -5,12 +5,7 @@
   font-family: Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body {
-  overflow-x: hidden;
-}
-
 header {
-  width: 100vw;
   height: 100vh;
   background-color: #000;
   background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
@@ -18,10 +13,10 @@ header {
 
 #navbar {
   display: flex;
-  width: 100vw;
+  width: 100%;
   justify-content: flex-end;
   position: fixed;
-  background-color: #be3144;
+  background-color: #5b6bf8;
 }
 
 #navbar ul {
@@ -45,8 +40,7 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   color: white;
 }
 
@@ -57,7 +51,7 @@ header {
 }
 
 #welcome-section p {
-  color: #8f3141;
+  color: #33ff55;
   font-size: 1.8rem;
 }
 
@@ -75,14 +69,17 @@ header {
 }
 
 .projects-grid {
- 
+  display: grid;
+  min-height: 50vh;
+  grid-template-columns: 450px 450px 450px;
+  grid-auto-rows: 450px;
+  gap: 50px;
+  justify-content: center;
+
 }
 
 .project-tile {
   display: block;
-  width: 400px;
-  height: 500px;
-  margin: 0px 100px;
   text-decoration: none;
 }
 
@@ -125,10 +122,55 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: whitesmoke;
+  color: rgb(22, 255, 61);
   font-size: 2rem;
-  width: 100vw;
   height: 10vh;
   background-color: #000;
   background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+}
+
+
+@media only screen and (max-width: 700px){
+
+  .projects-grid {
+    display: grid;
+    min-height: 50vh;
+    grid-template-columns: 300px;
+    grid-auto-rows: 250px;
+    gap: 50px;
+    justify-content: center;
+  }
+
+  #projects h2 {
+    margin-bottom: 50px;
+    font-size: 0.9rem;
+    color: whitesmoke;
+    text-align: center;
+  }
+
+  #navbar {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    position: inherit;
+    background-color: #5b6bf8;
+  }
+
+  #navbar ul {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #welcome-section h1 {
+    color: whitesmoke;
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  #welcome-section p {
+    color: #33ff55;
+    font-size: 1.8rem;
+  }
+
 }
